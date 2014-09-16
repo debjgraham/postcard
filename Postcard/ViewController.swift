@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
                             
+    @IBOutlet weak var toLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var enterNameTextField: UITextField!
     @IBOutlet weak var enterMessageTextField: UITextField!
@@ -28,6 +29,12 @@ class ViewController: UIViewController {
     @IBAction func sendMailButtonPressed(sender: UIButton) {
         // Code will evaluate when we press the button
         // Comment to have to do a second GIT push
+        toLabel.hidden = false
+        toLabel.text = enterNameTextField.text
+        enterNameTextField.text = ""
+        enterNameTextField.resignFirstResponder()
+        toLabel.textColor = UIColor.blueColor()
+        
         messageLabel.hidden = false
         messageLabel.text = enterMessageTextField.text
         enterMessageTextField.text = ""
